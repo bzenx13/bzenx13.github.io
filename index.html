@@ -1,33 +1,73 @@
- <html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question / Réponse déroulante</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f4f4f9;
+    }
 
-    <body>
+    /* Style du conteneur de la FAQ / question */
+    details {
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: background-color 0.2s ease;
+    }
 
-       <div style="background-color:black;color:white;padding:20px;">
+    details[open] {
+      background-color: #fafafa;
+    }
 
-        <h1>Rapport technique d'une étiquette électronique</h1>
+    /* Style de la question (cliquable) */
+    summary {
+      font-weight: bold;
+      font-size: 16px;
+      color: #2c3e50;
+      cursor: pointer;
+      outline: none;
+    }
 
-</div>
+    summary:hover {
+      color: #1abc9c;
+    }
 
-        <h2>1. Description</h2>
+    /* Style de la réponse en dessous */
+    .reponse {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid #eee;
+      color: #555;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
 
-        <h3>Cet objet est utilisé dans les grandes surfaces, les magasins et les pharmacies. Il sert principalement à afficher un prix, mais il peut également être utilisé pour transmettre d'autres informations.</h3>
+  <h2>Foire aux questions (FAQ)</h2>
 
-        <h2>2. Observation</h1>
+  <!-- Première question / réponse -->
+  <details>
+    <summary>Qu'est-ce qu'une étiquette électronique ?</summary>
+    <div class="reponse">
+      C'est un objet utilisé principalement dans les grandes surfaces et les pharmacies pour afficher dynamiquement les prix et transmettre d'autres informations logistiques.
+    </div>
+  </details>
 
-            <h4>• À l'avant : Présence d'un écran d'affichage.
+  <!-- Deuxième question / réponse -->
+  <details>
+    <summary>Comment fonctionne le système de menu déroulant ?</summary>
+    <div class="reponse">
+      Il utilise la balise HTML native &lt;details&gt; combinée avec &lt;summary&gt;, ce qui évite d'avoir à écrire du code JavaScript complexe pour gérer l'ouverture et la fermeture.
+    </div>
+  </details>
 
-            <p>• Sur le côté de l’ensemble plastique : Présence d'un code-barres comportant l'inscription 040531.</p>
-
-            • À l'arrière :
-
-           <p> ◦ Un code-barres avec l'inscription 02101025162300405310, dans laquelle on retrouve la séquence 040531 vue sur le côté.</p>
-
-            <p>◦ La mention S-TAG +6, qui désigne probablement le modèle de l'étiquette.</p>
-
-            <p>◦ Le symbole de la poubelle barrée (interdiction de jeter aux ordures ménagères), en dessous duquel figure l'inscription 0531 que l'on retrouve dans les autres codes.</p>
-
-            <p>◦ Les mentions SES et le marquage CE (conformité européenne). </h4></p>
-
-    </body>
-
-</html> 
+</body>
+</html>
