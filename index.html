@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu Déroulant HTML/CSS</title>
+  <title>Rapport technique - Étiquette électronique</title>
   <style>
-    /* Styles de base de la barre de navigation */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -13,11 +12,22 @@
       background-color: #f4f4f9;
     }
 
+    /* En-tête du rapport */
+    .header {
+      background-color: black;
+      color: white;
+      padding: 20px;
+    }
+
+    .header h1 {
+      margin: 0;
+    }
+
+    /* Styles de la barre de navigation */
     nav {
       background-color: #2c3e50;
     }
 
-    /* Style de la liste principale */
     .menu {
       list-style-type: none;
       margin: 0;
@@ -29,7 +39,6 @@
       position: relative;
     }
 
-    /* Liens principaux */
     .menu a {
       display: block;
       color: white;
@@ -42,7 +51,7 @@
       background-color: #34495e;
     }
 
-    /* Flèche pour indiquer un sous-menu */
+    /* Indice flèche pour les sous-menus */
     .has-submenu > a::after {
       content: " ▼";
       font-size: 10px;
@@ -59,53 +68,32 @@
       list-style-type: none;
       padding: 0;
       margin: 0;
-      min-width: 180px;
+      min-width: 320px;
       box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
       z-index: 100;
     }
 
-    /* Liens du sous-menu */
-    .submenu li a {
+    .submenu li {
       padding: 12px 16px;
+      color: #ecf0f1;
+      border-bottom: 1px solid #2c3e50;
+      font-size: 14px;
+      line-height: 1.4;
     }
 
-    .submenu li a:hover {
-      background-color: #1abc9c;
+    .submenu li:last-child {
+      border-bottom: none;
     }
 
-    /* Afficher le sous-menu au survol du parent */
-    .has-submenu:hover .submenu {
-      display: block;
+    .submenu ul {
+      margin: 5px 0 0 15px;
+      padding: 0;
+      list-style-type: disc;
     }
-  </style>
-</head>
-<body>
 
-  <nav>
-    <ul class="menu">
-      <li><a href="#accueil">Accueil</a></li>
-      
-      <!-- Élément avec sous-menu déroulant -->
-      <li class="has-submenu">
-        <a href="#services">Services</a>
-        <ul class="submenu">
-          <li><a href="#web">Développement Web</a></li>
-          <li><a href="#design">Design Graphique</a></li>
-          <li><a href="#seo">Référencement (SEO)</a></li>
-        </ul>
-      </li>
+    .submenu ul li {
+      padding: 4px 0;
+      border-bottom: none;
+    }
 
-      <li class="has-submenu">
-        <a href="#produits">Produits</a>
-        <ul class="submenu">
-          <li><a href="#logiciels">Logiciels</a></li>
-          <li><a href="#applications">Applications Mobile</a></li>
-        </ul>
-      </li>
-
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-</body>
-</html>
+    /*
